@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb5du6dagphec"]
+
+[ext_resource type="PackedScene" uid="uid://w4ofhus307lv" path="res://block.tscn" id="1_u8nad"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cymjq"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_47ttd"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Level1" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53833, 6)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_cymjq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_47ttd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.640753, 0.767747, 0, -0.767747, 0.640753, 0, 3.38197, 0)
+shadow_enabled = true
+
+[node name="Block1" parent="." instance=ExtResource("1_u8nad")]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Block2" parent="." instance=ExtResource("1_u8nad")]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Block3" parent="." instance=ExtResource("1_u8nad")]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0, 6.50922, 0)
+
+[node name="Block4" parent="." instance=ExtResource("1_u8nad")]
+transform = Transform3D(0.999822, 0.0188659, 0, -0.0188659, 0.999822, 0, 0, 0, 1, -1.26023, 6.76635, 0)
