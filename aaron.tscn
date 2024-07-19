@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://vhc5flqcviio"]
+
+[ext_resource type="Script" path="res://aaron.gd" id="1_muhkx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plmsw"]
+albedo_color = Color(0.465852, 0.645204, 0.918231, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cxjd2"]
+material = SubResource("StandardMaterial3D_plmsw")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gp5nc"]
+
+[node name="Aaron" type="CharacterBody3D"]
+script = ExtResource("1_muhkx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_cxjd2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_gp5nc")
