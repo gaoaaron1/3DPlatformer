@@ -14,6 +14,10 @@ config/name="Platformer"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[physics]
+
+3d/default_gravity=28.0
+
 [rendering]
 
 anti_aliasing/quality/msaa_3d=1
